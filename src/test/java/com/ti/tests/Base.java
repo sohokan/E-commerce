@@ -39,6 +39,36 @@ public class Base {
 
 
 
+//       ItemsList.stream()
+//                .filter(p ->
+//                        p.clothe_name.contains(color.toUpperCase())).
+//     forEach(e ->
+//                        System.out.println(e.clothe_name + " cost: " + e.clothe_price))
+//
+//       ;
+//
+//
+//
+//
+//        ItemsList.stream()
+//
+//                .forEach(
+//                        e -> {
+//                            if (e.clothe_name.contains(color.toUpperCase())) {
+//                                System.out.println(e.clothe_name + " cost: " + e.clothe_price);
+//                            } else {
+//                                System.out.println("Theres no color found");
+//                            }
+//                        }
+//                );
+
+
+//        ItemsList.stream()
+//                .filter(p ->
+//                        p.clothe_name.contains(color.toUpperCase())).findAny().
+//                orElseThrow(() -> new RuntimeException(
+//                        "color not found: " ));
+
 
 
 
