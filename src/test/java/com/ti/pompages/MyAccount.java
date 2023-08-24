@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -37,7 +36,7 @@ public class MyAccount extends MainPage{
         WebElement LinkMyAccount= driver.findElement(MyAccount);
         LinkMyAccount.click();
 
-            disableAds();
+            disableAds(adspopup);
 
         if( driver.getCurrentUrl().contains("google_vignette"))
         LinkMyAccount.click();
@@ -125,29 +124,6 @@ do {
 
 
 
-    void disableAds() throws InterruptedException {
-
-        if((adspopup.size() > 0) || driver.getCurrentUrl().contains("google_vignette"))  {
-// Comparing the web URL
-//            assertEquals("https://practice.automationtesting.in/#google_vignette", driver.getCurrentUrl());
-
-//            new WebDriverWait(driver, Duration.ofSeconds(10))
-//                    .until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("//div[contains(@class,'close')]"))));
-
-
-
-            Thread.sleep(1000);
-
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); while (elements.length > 0) elements[0].remove()");
-          /*  WebElement AdButton = driver.findElement(By.xpath("//div[contains(@class,'close')]"));
-            AdButton.click();*/
-
-// Comparing the web URL
-//            String newURL = driver.getCurrentUrl();
-//            assertEquals("https://practice.automationtesting.in/my-account/", newURL);
-        }
-    }
 
 
 }

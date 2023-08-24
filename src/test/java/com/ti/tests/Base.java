@@ -1,5 +1,6 @@
 package com.ti.tests;
 
+import com.ti.pompages.Shop;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.ti.DriverFactory;
 import org.ti.BrowserType;
@@ -20,6 +21,8 @@ public class Base {
     MainPage mainPage;
     MyAccount myAccount;
 
+    Shop shop;
+
 
 
 
@@ -33,6 +36,7 @@ public class Base {
 
         mainPage= new MainPage();
         myAccount= new MyAccount();
+        shop= new Shop();
 
 
     }
