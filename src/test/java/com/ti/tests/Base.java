@@ -2,13 +2,11 @@ package com.ti.tests;
 
 import com.ti.pompages.Shop;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.testng.annotations.*;
 import org.ti.DriverFactory;
 import org.ti.BrowserType;
 import com.ti.pompages.MainPage ;
 import com.ti.pompages.MyAccount ;
-
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,28 +16,39 @@ public class Base {
 
     protected String baseUrl = "https://practice.automationtesting.in/";
 
-    MainPage mainPage;
-    MyAccount myAccount;
 
     Shop shop;
+    MyAccount myAccount;
 
 
 
 
 
-
-    @BeforeTest
+    @BeforeSuite
     @Parameters("browser")
     public void setup(String browser) {
         DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser));
         DriverFactory.getInstance().getDriver().navigate().to(baseUrl);
 
-        mainPage= new MainPage();
-        myAccount= new MyAccount();
-        shop= new Shop();
-
 
     }
+
+    @BeforeClass
+    public void runObjects()
+    {
+        shop =new Shop();
+        myAccount= new MyAccount();
+
+    }
+
+
+    @AfterSuite
+    void turnDown() {
+
+        DriverFactory.getInstance().removeDriver();
+    }
+
+
 
 
 
@@ -67,11 +76,6 @@ public class Base {
 //                );
 
 
-//        ItemsList.stream()
-//                .filter(p ->
-//                        p.clothe_name.contains(color.toUpperCase())).findAny().
-//                orElseThrow(() -> new RuntimeException(
-//                        "color not found: " ));
 
 
 

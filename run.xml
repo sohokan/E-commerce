@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test name="Chrome Test">
-        <parameter name="browser" value="CHROME"/>
+<suite name="All Test Suite" parallel="false" thread-count="1" preserve-order="true" >
+    <parameter name="browser" value="CHROME"/>
+
+    <test name=" Test">
+
         <classes>
-            <class name="com.ti.tests.NewRegistration"></class>
+            <class name="com.ti.tests.NewRegistration"/>
+            <class name="com.ti.tests.ShopMenu"/>
+
 
 
         </classes>
     </test>
-</suite>
+
+    </suite>
+
+

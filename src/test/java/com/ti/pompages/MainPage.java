@@ -59,7 +59,7 @@ public class MainPage {
     public void hideElement(By ads)
     {
         List<WebElement> element = driver.findElements(ads);
-        System.out.println(element.size());
+
         for (var e:element
              ) {
             System.out.println(e.getClass());
